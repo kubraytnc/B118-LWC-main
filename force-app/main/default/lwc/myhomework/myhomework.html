@@ -1,0 +1,7 @@
+<template>
+    <lightning-input type="number" label="Add value" onchange={handleNumberChange}></lightning-input>
+    <template for:each={array} for:item="element">
+      <p key={element}>{element}</p>
+    </template>
+  </template>
+  
