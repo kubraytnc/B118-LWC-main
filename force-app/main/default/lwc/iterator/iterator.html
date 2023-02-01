@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="iterator"> <!--iterator listin ilk ve son elementine ulasmaya izin veren it.last, it.first ifadelerini kullanir
+    Bunlar boolean return eder.-->
+        <template iterator:it={customerList}><!--Listin içerisinden tek tek elementleri ceker, it ismi altında tutar-->
+             <li key={it.value.id}> <!--it.value kullanmak zorundayiz.id yazmasak da olur-->
+                <div if:true={it.first} class = "first-class"> </div>
+                <ul>{it.value.name}</ul>
+                <ul>{it.value.phone}</ul>
+                <ul>{it.value.email}</ul>
+                <div if:true={it.last} class="last-class"></div>
+<!--it.last, it.first, it.index kullanilabilir. -->
+             </li>
+        </template>
+    </lightning-card>
+</template>
+<!--
+*Bir dizi üzerinde yineleme yapmak üzere for:each yönergesini veya iterator yönergesini kullanırız.
+*Yönergeyi, tekrarlamak istediğiniz HTML öğelerini kapsayan nested bir <template> tagine ekleyin.
+*İterator yönergesi, bir listteki first ve last öğelere özel davranışlar uygulamanıza izin verir.
+*Hangi yönergeyi kullanırsanız kullanın, her öğeye benzersiz bir kimlik atamak için bir key kullanmalısınız.
+*Bir liste değiştiğinde, template yalnızca değişen öğeyi yeniden işlemek için, bu ID'yi kullanır.-->
