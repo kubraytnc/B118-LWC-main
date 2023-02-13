@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Get Accounts with Wire">
+        <lightning-input 
+        label="Search Account" 
+    
+        onchange={handleChange}>
+        </lightning-input>
+
+        <template for:each={accounts.data} for:item="accounts">
+            <p key={accounts.id}>{accounts.Name}</p>
+             
+            <p key={accounts.id}>{accounts.Phone}</p>
+        </template>
+
+    </lightning-card>
+</template>
